@@ -28,7 +28,6 @@ Server::~Server() {
 void Server::newConnection() {
     QTcpSocket *socket = server->nextPendingConnection();
 
-    //connect (socket, SIGNAL(connected()), this, SLOT(connected()));
     connect (socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
     connect (socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 
