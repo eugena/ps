@@ -2,7 +2,7 @@
 **
 ** server.cpp
 **
-** Handling requests
+** Handling of requests
 **
 ****************************************************************************/
 
@@ -15,9 +15,9 @@ Server::Server(QObject *parent) : QObject(parent)
     server = new QTcpServer(this);
     connect (server, SIGNAL(newConnection()), this, SLOT(newConnection()));
     if (!server->listen(QHostAddress::Any, 12345)) {
-        qDebug() << "Server could not started.";
+        qDebug() << "Server could not started";
     } else {
-        qDebug() << "Server has started.";
+        qDebug() << "Server has started";
     }
 }
 
